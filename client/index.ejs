@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Full stack react mobx">
+  <meta name="application-name" content="Full stack react mobx">
+	<title>Full stack react mobx: </title>
+  <link href="https://fonts.googleapis.com/css?family=Maven+Pro:700,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/dist/app.css">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link href="//cdn.muicss.com/mui-0.9.9-rc2/css/mui.min.css" rel="stylesheet" type="text/css" media="screen" />
+  <link rel="stylesheet" href="assets/styles/salesforce-lightning-design-system.min.css">
+  <link rel="stylesheet" href="assets/styles/json-inspector.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/leaflet.css">
+    <% if (env !== 'local') { %>
+    <link rel="stylesheet" type="text/css" href="<%= getAsset('vendor_bower.css') %>">
+    <% } else{ %>
+      <link rel="stylesheet" type="text/css" href="http://localhost:3300/dist/vendor_bower-64bcbdb9ecfd9fe8cca0e6ec8d26f002.css">
+    <% } %>
+  <style>
+    body {
+        font-family: "Lato", sans-serif;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s
+    }
+
+    .sidenav a:hover, .offcanvas a:focus{
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    #main {
+        transition: margin-left .5s;
+        padding: 16px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+  </style>
+</head>
+<body >
+   <div id="root" class="">
+   </div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<% if (env === 'local') { %>
+
+   <script src="http://maps.google.com/maps/api/js?libraries=places&v=3.22&key=AIzaSyAnQEvHG4UKeeNqu0OhhgPX9CcNck3qPT0"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+   <script src="<%= getAsset('vendor_bower.js') %>"></script>
+	<script src="<%= getAsset('vendor_node.js') %>"></script>
+	<script src="<%= getAsset('app.js') %>"></script>
+
+<% } else{ %>
+   <script src="http://maps.google.com/maps/api/js?libraries=places&v=3.22&key=AIzaSyAnQEvHG4UKeeNqu0OhhgPX9CcNck3qPT0"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+   <script src="http://localhost:3150/static/vendor_bower.js"></script>
+   <script src="http://localhost:3150/static/vendor_node.js"></script>
+   <script src="http://localhost:3150/static/app.js"></script>
+<% } %>
+<script src="http://ejohn.org/files/pretty.js"></script>
+
+</body>
+</html>

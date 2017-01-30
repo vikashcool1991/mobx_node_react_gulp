@@ -1,0 +1,36 @@
+{
+  "presets": ["react", "es2015", "stage-0"],
+  "plugins" : ["transform-decorators-legacy"],
+  "env": {
+    "development": {
+      "plugins": [
+
+      ["transform-decorators-legacy", "react-transform",
+        {
+          "transforms": [
+          {
+            "transform": "transform-decorators-legacy",
+            "imports": [
+              "react",
+              "redbox-react"
+            ]
+          },
+          {
+            "transform": "react-transform-catch-errors",
+            "imports": [
+              "react",
+              "redbox-react",
+              "../reporterOptions.js"
+            ]
+          }
+
+        ],
+        }
+      ]
+     ]
+    },
+    "production" : {
+      "plugins" : [ "transform-decorators-legacy" ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "hotel Pim",
+  "description": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "leaflet": "^1.0.2",
+    "font-awesome": "^4.5.0",
+    "froala-wysiwyg-editor": "^2.2.2",
+    "jquery": "^2.2.2"
+  },
+  "overrides": {
+
+  }
+}
